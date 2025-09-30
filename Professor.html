@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Professor</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="nome">Nome aluno: </label>
+      <input type="text" id="nome" placeholder="ex: Magno Santos" required/>
+
+      <label for="cpf">CPF:</label>
+      <input
+        type="password"
+        id="cpf"
+        required
+        placeholder="ex:000.000.000-00"
+        pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"/>
+
+      <label for="ra">RA: </label>
+      <input type="number" id="ra" placeholder="ex:102466" required />
+
+      <label for="">Turma:</label>
+      <select name="turma" id="turma">
+        <option value="">Selecione</option>
+        <option value="op1">A</option>
+        <option value="op2">B</option>
+        <option value="op2">C</option>
+      </select>
+
+      <label for="">Ano escolar:</label>
+      <select name="ano_escolar" id="ano_escolar">
+        <option value="">Selecione</option>
+        <option value="op1">9° Fundamental</option>
+        <option value="op2">1° Ensino Médio</option>
+        <option value="op2">2° Ensino Médio</option>
+        <option value="op2">3° Ensino Médio</option>
+      </select>
+
+      <button>Cadastrar aluno</button>
+    </form>
+    <!-- buscar alunos pelo cpf (lembar de implementar o action)-->
+    <form action="" method="get">
+      <label for="buscar-cpf">Buscar por CPF</label>
+      <input
+        id="buscar-cpf"
+        name="cpf"
+        type="text"
+        required
+        pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+        placeholder="000.000.000-00"/>
+      <button type="submit">Pesquisar</button>
+    </form>
+
+    <div id="listarAlunos">
+      <h3>Lista de Alunos</h3>
+      <!-- O servidor deve renderizar cada aluno como uma linha -->
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>RA</th>
+            <th>Turma</th>
+            <th>Ano escolar</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="professor.js"></script>
+  </body>
+</html>

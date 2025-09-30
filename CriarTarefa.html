@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar tarefa</title>
+</head>
+<body>
+
+
+    <form action="" method="post" enctype="multipart/form-data">
+      <!--criar tarefa-->
+        <h2>Criar tarefa</h2>
+        <label for="cpf-tarefa">CPF do aluno</label>
+        <input id="cpf-tarefa" name="cpf_aluno" type="text" required
+               pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"/>
+
+        <label for="titulo-tarefa">Título / Materia</label>
+        <input id="titulo-tarefa" name="titulo" type="text" required/>
+
+        <label for="conteudo-tarefa">Conteúdo / Descrição</label>
+        <textarea id="conteudo-tarefa" name="conteudo" rows="4" cols="50" required></textarea>
+
+        <label for="nota-tarefa">Nota atribuída (opcional)</label>
+        <input id="nota-tarefa" name="nota" type="number" min="0" max="10" step="0.01"/>
+
+        <label for="arquivo-tarefa">Upload (apenas .txt, .pdf, .png, .jpeg/.jpg)</label>
+        <input id="arquivo-tarefa" name="arquivo" type="file"
+               accept=".txt,.pdf,.png,.jpeg,.jpg" />
+        <button type="submit">Criar tarefa</button>
+    </form>
+
+    <!--editar-->
+    <form action="" method="post" enctype="multipart/form-data"> <!--adicionar action-->
+        <h2>Editar tarefa</h2>
+
+        <input type="hidden" name="tarefa_id" value="" />
+
+        <label for="cpf-tarefa-edit">CPF do aluno</label>
+        <input id="cpf-tarefa-edit" name="cpf_aluno" type="text" required />
+
+        <label for="titulo-tarefa-edit">Título / Matéria</label>
+        <input id="titulo-tarefa-edit" name="titulo" type="text" required />
+
+        <label for="conteudo-tarefa-edit">Conteúdo / Descrição</label>
+        <textarea id="conteudo-tarefa-edit" name="conteudo" rows="4" cols="50" required></textarea>
+
+        <label for="prazo-tarefa-edit">Prazo (data/hora)</label>
+        <input id="prazo-tarefa-edit" name="prazo" type="datetime-local" required />
+
+        <label for="nota-tarefa-edit">Nota</label>
+        <input id="nota-tarefa-edit" name="nota" type="number" min="0" max="10" step="0.01" />
+
+        <label for="arquivo-tarefa-edit">Upload (substituir arquivo)</label>
+        <input id="arquivo-tarefa-edit" name="arquivo" type="file"
+               accept=".txt,.pdf,.png,.jpeg,.jpg" />
+
+        <button type="submit">Salvar alterações</button>
+
+    </form>
+
+    <!-- EXCLUSÃO: excluir tarefa por id -->
+     <h2>Excluir tarefa</h2>
+    <form action="/tarefas/excluir" method="post">
+      <label for="tarefa-excluir">Excluir tarefa (ID)</label>
+      <input id="tarefa-excluir" name="tarefa_id" type="text" required />
+      <button type="submit">Excluir tarefa</button>
+    </form>
+
+    <!-- Tabela de tarefas (será preenchida pelo servidor) -->
+    <h3>Lista de Tarefas</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CPF Aluno</th>
+          <th>Matéria / Título</th>
+          <th>Conteúdo</th>
+          <th>Prazo</th>
+          <th>Nota</th>
+          <th>Arquivo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    
+</body>
+</html>
