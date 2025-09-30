@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasnferir aluno</title>
+</head>
+<body>
+    
+  <section id="transferir">
+    <h2>Transferir Aluno entre Turmas</h2>
+    <form action="" method="post"> <!-- adicionar action-->
+      <label for="cpf-transfer">CPF do aluno</label>
+      <input id="cpf-transfer" name="cpf" type="text" required pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"/>
+
+      <label for="turma-origem">Turma origem</label>
+      <select id="turma-origem" name="turma_origem" required>
+        <option value="">Selecione</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <button type="submit" id="transfer">Trasferir</button>
+    </form>
+  </section> 
+</body>
+</html>
